@@ -1,5 +1,7 @@
-let currentDate = moment().format('MMMM D, YYYY- h:mm a');
-let currentTime = moment().format('HH');
+let currentYear = moment().format('YYYY');
+let currentDate = moment().format('MMMM D');
+let currentTime = moment().format('h:mm a');
+let currentHour = moment().format('HH');
 const clockArr24 = [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 const clockArr = [7, 8, 9, 10, 11, 12, 1, 2, 3, 4, 5, 6, 7, 8];
 const numArr = [
@@ -19,11 +21,13 @@ const numArr = [
   'eightpm',
 ];
 
-const currentDateBox = document.querySelector('#currentDay');
+const currentTimeBox = document.querySelector('#currentTime');
+const currentDateBox = document.querySelector('#currentDate');
 const container = document.querySelector('.container');
 const saveButts = document.querySelectorAll('.save');
 
 currentDateBox.append(currentDate);
+currentTimeBox.append(currentTime);
 
 for (let i = 0; i < numArr.length; i++) {
   console.log(localStorage.getItem(numArr[i]));
@@ -44,7 +48,6 @@ saveButts.forEach((butt) => {
     console.log(this.previousElementSibling.value);
     const slot = this.id;
     const note = this.previousElementSibling.value;
-
     localStorage.setItem(slot, note);
   });
   i++;
