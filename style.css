@@ -70,12 +70,20 @@ textarea:focus {
   border: solid 1px white;
   border-bottom: none;
 }
+.foot {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-size: .8em;
+}
 
 @media only screen and (min-width: 900px) {
   .container {
-    margin: 1rem;
+    margin: auto;
+    max-width: 1000px;
   }
   textarea {
     font-size: 16px;
   }
+
 }
